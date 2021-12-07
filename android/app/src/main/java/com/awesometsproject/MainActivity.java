@@ -71,6 +71,18 @@ public class MainActivity extends AppCompatActivity implements DefaultHardwareBa
 //            }
 //        });
 
+        findViewById(R.id.circle).setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+
+                if(event.getAction() == MotionEvent.ACTION_MOVE){
+                    v.setX(event.getX());
+                    v.setY(event.getY());
+                }
+                return true;
+            }
+        });
+
         Fragment reactNativeFragment = new CustomReactFragment.Builder()
                 .setComponentName("AwesomeTSProject")
                 .build();
