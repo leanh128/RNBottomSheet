@@ -12,13 +12,27 @@
         android:focusable="true"
         android:background="@drawable/bg" />
 
+    <View
+        android:id="@+id/circle"
+        android:background="@drawable/circle"
+        android:backgroundTint="#00f"
+        android:layout_width="50dp"
+        android:layout_height="50dp"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Input text"
+        android:gravity="center"
+        android:background="#fff"
+        android:padding="8dp"
+        android:text="123"
+        android:layout_gravity="center"/>
 
     <FrameLayout
         android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="bottom"
-        android:layout_marginTop="60dp"
         android:background="#0000" />
 
 </FrameLayout>
