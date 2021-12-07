@@ -13,7 +13,7 @@
     "@gorhom/bottom-sheet": "^4.1.4",
     "react": "17.0.2",
     "react-native": "0.66.3",
-    "react-native-gesture-handler": "^2.0.0",
+    "react-native-gesture-handler": "^1.10.3",
     "react-native-pager-view": "^5.4.9",
     "react-native-reanimated": "^2.2.4",
     "reanimated-bottom-sheet": "^1.0.0-alpha.22"

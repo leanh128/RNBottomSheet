@@ -2,7 +2,9 @@ package com.awesometsproject;
 
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -47,11 +49,34 @@ public class MainActivity extends AppCompatActivity implements DefaultHardwareBa
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Fragment reactNativeFragment = new ReactFragment.Builder()
+        findViewById(R.id.background).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d("leon", "background clicked");
+            }
+        });
+//        findViewById(R.id.background).setOnTouchListener(new View.OnTouchListener() {
+//            @Override
+//            public boolean onTouch(View v, MotionEvent event) {
+//                Log.d("leon", "background touched: "+ event.toString());
+//                return false;
+//            }
+//        });
+//
+//
+//        findViewById(R.id.btn).setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Log.d("leon", "Button clicked");
+//            }
+//        });
+
+        Fragment reactNativeFragment = new CustomReactFragment.Builder()
                 .setComponentName("AwesomeTSProject")
-//                .setLaunchOptions(getLaunchOptions("test message"))
                 .build();
-        getSupportFragmentManager().beginTransaction().replace(R.id.container, reactNativeFragment,"").commitAllowingStateLoss();
+        getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.container, reactNativeFragment,"").commitAllowingStateLoss();
     }
 
     @Override
